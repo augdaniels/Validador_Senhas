@@ -26,8 +26,21 @@ class AppTest {
         assertFalse(resultado.isValida());
 
         assertTrue(resultado.getErros().contains(
-                "A senha deve conter pelo menos 2 dígitos"
+                "A senha deve conter pelo menos 2 dígitos numericos"
         ));
     }
+    
+    @Test
+    void deveRejeitarSenhaSemLetraMaiuscula() {
+        ResultadoValidacao resultado =
+                ValidadorSenha.validar("abcdef12!");
+
+        assertFalse(resultado.isValida());
+
+        assertTrue(resultado.getErros().contains(
+                "A senha deve conter pelo menos uma letra maiuscula"
+        ));
+    }
+
 
 }

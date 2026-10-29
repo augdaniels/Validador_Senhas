@@ -22,7 +22,7 @@ public class ValidadorSenha {
         }
 
         if (quantidadeDigitos < 2) {
-            erros.add("A senha deve conter pelo menos 2 dígitos");
+            erros.add("A senha deve conter pelo menos 2 dígitos numericos");
         }
 
         return new ResultadoValidacao(erros.isEmpty(), erros);
