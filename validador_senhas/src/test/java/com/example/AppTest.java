@@ -54,5 +54,31 @@ class AppTest {
         ));
     }
 
+    @Test
+    void deveRetornarTodosOsErrosDaSenhaInvalida() {
+        ResultadoValidacao resultado =
+                ValidadorSenha.validar("mypass");
+
+        assertFalse(resultado.isValida());
+
+        assertEquals(4, resultado.getErros().size());
+
+        assertTrue(resultado.getErros().contains(
+                "A senha deve ter pelo menos 8 caracteres"
+        ));
+
+        assertTrue(resultado.getErros().contains(
+                "A senha deve conter pelo menos 2 dígitos"
+        ));
+
+        assertTrue(resultado.getErros().contains(
+                "A senha deve conter pelo menos uma letra maiuscula"
+        ));
+
+        assertTrue(resultado.getErros().contains(
+                "A senha deve conter pelo menos um caractere especial"
+        ));
+    }
+
 
 }
