@@ -26,7 +26,7 @@ class AppTest {
         assertFalse(resultado.isValida());
 
         assertTrue(resultado.getErros().contains(
-                "A senha deve conter pelo menos 2 dígitos numericos"
+                "A senha deve conter pelo menos 2 dígitos"
         ));
     }
     
